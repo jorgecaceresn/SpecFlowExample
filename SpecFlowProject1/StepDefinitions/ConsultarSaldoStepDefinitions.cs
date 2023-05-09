@@ -24,8 +24,7 @@ namespace SpecFlowProject1.StepDefinitions
         [Given(@"\[Se inicia la cuenta con saldo (.*)]")]
         public void GivenSeIniciaLaCuentaConSaldo(float p0)
         {
-            Cuenta c = new Cuenta();
-            c.saldo = p0;
+            Cuenta c = new Cuenta(p0);
             Console.WriteLine(p0);
             ctx.Add("cuenta", c);
         }
@@ -49,8 +48,10 @@ namespace SpecFlowProject1.StepDefinitions
         public void ThenElMensajeSaldoEs(string p0)
         {
             Cuenta comprador = (Cuenta)ctx["cuenta"];
-            comprador.saldoMessage.Should().Be(p0);
             Console.WriteLine($"{nameof(ThenElMensajeSaldoEs)}: {p0}");
+            Console.WriteLine($"{nameof(ThenElMensajeSaldoEs)}: {comprador.saldoMessage}");
+            comprador.saldoMessage.Should().Be(p0);
+            
         }
 
     }
