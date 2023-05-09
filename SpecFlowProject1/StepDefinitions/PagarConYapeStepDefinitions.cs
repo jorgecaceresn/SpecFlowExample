@@ -23,14 +23,14 @@ namespace SpecFlowProject1.StepDefinitions
         }
 
         [Given(@"\[Se inicia cuenta de comprador teniendo saldo (.*)]")]
-        public void GivenSeIniciaCuentaDeCompradorTeniendoSaldo(int p0)
+        public void GivenSeIniciaCuentaDeCompradorTeniendoSaldo(float p0)
         {
             Cuenta comprador = new Cuenta(p0);
             ctx.Add("comprador", comprador);
         }
 
         [Given(@"\[Se inicia la cuenta del vendedor teniendo saldo (.*)]")]
-        public void GivenSeIniciaLaCuentaDelVendedorTeniendoSaldo(int p0)
+        public void GivenSeIniciaLaCuentaDelVendedorTeniendoSaldo(float p0)
         {
             Cuenta vendedor = new Cuenta(p0);
             ctx.Add("vendedor", vendedor);
@@ -47,7 +47,7 @@ namespace SpecFlowProject1.StepDefinitions
         
 
         [When(@"\[Se debita (.*) del comprador]")]
-        public void WhenSeDebitaDelComprador(int p0)
+        public void WhenSeDebitaDelComprador(float p0)
         {
             Cuenta comprador = (Cuenta)ctx["comprador"];
             comprador.debitarCuenta(p0);
@@ -55,33 +55,33 @@ namespace SpecFlowProject1.StepDefinitions
         }
 
         [When(@"\[Se abona (.*) al vendedor]")]
-        public void WhenSeAbonaAlVendedor(int p0)
+        public void WhenSeAbonaAlVendedor(float p0)
         {
             Cuenta vendedor = (Cuenta)ctx["vendedor"];
             vendedor.abonarCuenta(p0);
         }        
 
         [Then(@"\[El saldo en el comprador es (.*)]")]
-        public void ThenElSaldoEnElCompradorEs(int p0)
+        public void ThenElSaldoEnElCompradorEs(float p0)
         {
             Cuenta comprador = (Cuenta)ctx["comprador"];
             comprador.saldo.Should().Be(p0);
         }
 
         [Then(@"\[El saldo en el vendedor es (.*)]")]
-        public void ThenElSaldoEnElVendedorEs(int p0)
+        public void ThenElSaldoEnElVendedorEs(float p0)
         {
             Cuenta vendedor = (Cuenta)ctx["vendedor"];
             vendedor.saldo.Should().Be(p0);
         }
     
 
-        [Then(@"\[El mensaje es ""([^""]*)""]")]
-        public void ThenElMensajeEs(string p0)
+        [Then(@"\[El mensaje debito es ""([^""]*)""]")]
+        public void ThenElMensajeDebitoEs(string p0)
         {
             Cuenta comprador = (Cuenta)ctx["comprador"];
-            comprador.message.Should().Be(p0);
-            Console.WriteLine($"{nameof(ThenElMensajeEs)}: {p0}");           
+            comprador.debitoMessage.Should().Be(p0);
+            Console.WriteLine($"{nameof(ThenElMensajeDebitoEs)}: {p0}");           
             
         }
     }

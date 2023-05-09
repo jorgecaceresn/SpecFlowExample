@@ -5,24 +5,35 @@ namespace ClassLibrary1
     public class Cuenta
     {
         public double saldo { get; set; }
-        public string message { get; set; }
+        public string debitoMessage { get; set; }
+
+        public string saldoMessage { get; set; }
 
         public Cuenta(double saldo)
         {
             this.saldo = saldo;
-            message = "";
+            debitoMessage = "";
+            if(saldo < 0)
+            {
+                saldoMessage = "La cuenta no puede tener saldo negativo";
+            }
+            else
+            {
+                saldoMessage = "";
+            }
         }
         public Cuenta()
         {
             saldo = 0;
-            message = "";
+            debitoMessage = "";
+            saldoMessage = "";
         }
 
         public double debitarCuenta(double monto)
         {
             
             if ((saldo - monto)< 0){
-                message = "Saldo insuficiente";
+                debitoMessage = "Saldo insuficiente";
             }            
             return saldo -= monto;
         }

@@ -21,19 +21,37 @@ namespace SpecFlowProject1.StepDefinitions
             ctx.Add("cuenta",c);
         }
 
+        [Given(@"\[Se inicia la cuenta con saldo (.*)]")]
+        public void GivenSeIniciaLaCuentaConSaldo(float p0)
+        {
+            Cuenta c = new Cuenta();
+            c.saldo = p0;
+            Console.WriteLine(p0);
+            ctx.Add("cuenta", c);
+        }
+
         [When(@"\[Se consulta el saldo]")]
         public void WhenSeConsultaElSaldo()
         {
-            Cuenta c = new Cuenta();
+            Cuenta c = (Cuenta)ctx["cuenta"];
             double saldo = c.saldo;
             ctx.Add("saldo", saldo);
         }
 
         [Then(@"\[El saldo es (.*)]")]
-        public void ThenElSaldoEs(int p0)
+        public void ThenElSaldoEs(float p0)
         {
             double saldo = (double)ctx["saldo"];
             saldo.Should().Be(p0);
         }
+
+        [Then(@"\[El mensaje saldo es ""([^""]*)""]")]
+        public void ThenElMensajeSaldoEs(string p0)
+        {
+            Cuenta comprador = (Cuenta)ctx["cuenta"];
+            comprador.saldoMessage.Should().Be(p0);
+            Console.WriteLine($"{nameof(ThenElMensajeSaldoEs)}: {p0}");
+        }
+
     }
 }
