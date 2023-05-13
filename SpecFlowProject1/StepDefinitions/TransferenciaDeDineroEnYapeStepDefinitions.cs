@@ -111,6 +111,13 @@ namespace SpecFlowProject1.StepDefinitions
             Console.WriteLine("Se actualiza el saldo de la cuenta del Usuario A.");
         }
 
+        [Then(@"se actualiza el saldo de la cuenta del Usuario B")]
+        public void ThenSeActualizaElSaldoDeLaCuentaDelUsuarioB()
+        {
+            // Implementación: Lógica para actualizar el saldo de la cuenta del Usuario A
+            Console.WriteLine("Se actualiza el saldo de la cuenta del Usuario B.");
+        }
+
         [Then(@"se muestra una notificación al Usuario B sobre la transferencia recibida")]
         public void ThenSeMuestraUnaNotificacionAlUsuarioBSobreLaTransferenciaRecibida()
         {

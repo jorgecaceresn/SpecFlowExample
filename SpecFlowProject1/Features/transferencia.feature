@@ -25,4 +25,5 @@
 
     Then se muestra un mensaje de confirmación de transferencia exitosa
     And se actualiza el saldo de la cuenta del Usuario A
+    And se actualiza el saldo de la cuenta del Usuario B
     And se muestra una notificación al Usuario B sobre la transferencia recibida

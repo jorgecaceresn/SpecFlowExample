@@ -155,6 +155,9 @@ namespace SpecFlowProject1.Features
     testRunner.And("se actualiza el saldo de la cuenta del Usuario A", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
+    testRunner.And("se actualiza el saldo de la cuenta del Usuario B", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
     testRunner.And("se muestra una notificación al Usuario B sobre la transferencia recibida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
