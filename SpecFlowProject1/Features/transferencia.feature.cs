@@ -123,17 +123,6 @@ namespace SpecFlowProject1.Features
 #line 15
     testRunner.When("el Usuario A selecciona la opción de \"Transferir dinero\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Destinatario",
-                            "Monto",
-                            "Descripción"});
-                table1.AddRow(new string[] {
-                            "Usuario B",
-                            "$50.00",
-                            "Pago de deuda"});
-#line 16
-    testRunner.And("el Usuario A ingresa los datos de la transferencia:", ((string)(null)), table1, "And ");
-#line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Destinatario",
                             "Monto",
@@ -142,8 +131,19 @@ namespace SpecFlowProject1.Features
                             "Usuario B",
                             "$50.00",
                             "Pago de deuda"});
+#line 16
+    testRunner.And("el Usuario A ingresa los datos de la transferencia:", ((string)(null)), table2, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Destinatario",
+                            "Monto",
+                            "Descripción"});
+                table3.AddRow(new string[] {
+                            "Usuario B",
+                            "$50.00",
+                            "Pago de deuda"});
 #line 20
-    testRunner.Then("se muestra un resumen de la transferencia:", ((string)(null)), table2, "Then ");
+    testRunner.Then("se muestra un resumen de la transferencia:", ((string)(null)), table3, "Then ");
 #line hidden
 #line 24
     testRunner.And("el Usuario A confirma la transferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
